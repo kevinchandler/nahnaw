@@ -3,7 +3,7 @@
   <title><![CDATA[Kevin Linder]]></title>
   <link href="http://www.kevinlinder.com/feed.xml" rel="self"/>
   <link href="http://www.kevinlinder.com/"/>
-  <updated>2017-02-21T02:49:53+00:00</updated>
+  <updated>2017-02-21T03:02:12+00:00</updated>
   <id>http://www.kevinlinder.com/</id>
   <author>
     <name><![CDATA[Kevin Linder]]></name>
@@ -11,7 +11,61 @@
   </author>
   
   <entry>
-    <title type="html"><![CDATA[Doing the hard way, 15 miles at a time]]></title>
+    <title type="html"><![CDATA[Charter Install Hell With a Tivo]]></title>
+    <link href="http://www.kevinlinder.com/articles/2014/05/11/charter-install-hell-with-a-tivo/"/>
+    <updated>2014-05-11T04:57:35+00:00</updated>
+    <id>http://www.kevinlinder.com/articles/2014/05/11/charter-install-hell-with-a-tivo</id>
+    <content type="html"><![CDATA[<p>You know that saying about installing cable being up there with getting a root canal? Well sadly it's true. This post will mostly serve as assistance for any others that might happen to be in my situation. It also has the added benefit of allowing me to vent from the complete incompetence of the installers employed by Charter.</p>
+<a class="anchor" id="read-more"></a>
+<p>The worst part is I already had Charter Communications out to my house. I previously had them come out and install Internet. It went as smoothly as it could go when the installer finds that you don't have a line present and he has to run one from the telephone pole in your neighbors yard. Most of the time he took was simply to get the cable to my house. With that done the actual hooking up the Internet went fairly smooth and error free.</p>
+
+<p>Sweet.</p>
+
+<p>Once I get my TV and entertainment center hooked up, I realize that the rabbit ears I have used for quite a number of years to get free HD channels, is not good enough for my current location. Thus I needed to get cable TV. So call Charter and get an appointment set up. I get the usual, they will be there between 3pm-5pm and it might take 2+ hours to complete.</p>
+
+<p>Fast forward to 3pm and I get a phone call telling me they are waiting for me at the door. I open the door and then tell the operator that there is no one at my door. She then proceeds to say ok and then hang up. I'm baffled but figured I'd hear the door knock soon. So I wait.</p>
+
+<p>Long story short, they are ringing the bell at 727 instead of my house at 721.</p>
+
+<p>I try not to get annoyed as it can be a simple mistake or perhaps he didn't see the ONE that is a SEVEN.</p>
+
+<p>Although I had the cable newly run from the pole for Internet, it seems they have to get on the pole in order to do god knows what else. They get that handled and now start working on the actual cable installation inside.</p>
+
+<p>After some time they call me into the living room and tell me they can't seem to get my Series3 Tivo working. All the Tivo keeps doing is stating it is downloading the channel list. Just a blue screen with that icon.</p>
+
+<p>In order to use a Series3 Tivo, I needed two CableCards. They installed MCards or multi-stream cards, although I could have used SCards (single stream cards) those are not readily available and by putting MCards into a Series3 Tivo they will revert to a SCard. Thus why I need two of them. In addition to the CableCards I also needed a Digital Tuner. This is a box that communicates with the Cable Company to tell them which cable channel I have requested to view. At which the send the signal down and communicate back to the Digital Tuner where it can be located in the downward stream of cable. (note: this is a very simply way of describing it but you get the point I hope). Then the Digital Tuner will output the signal to the Tivo which the CableCards then decrypt the encrypted data.</p>
+
+<p>The installer (and his intern which he is training) proceeds to tell me he has done everything correctly and my box is getting the signal. He proceeds to show me his tool as if some gibberish on his screen means something to me and that it will all make sense. Being in software myself, just because something has a ping, doesn't mean it is set up correctly. We spend the next almost hour of going through looking at the CableCard details as well as he switching the slots they are located in. He unplugs the tuner as well as various other things only to plug them back in. I realize he is looking to me to solve it and is at a point where he is stuck and doesn't know what to do.</p>
+
+<p>His advice? I need to go buy a new Tivo. Because that must be the issue. My Tivo is broken. It is now 5pm and he is stating he will give him his phone number and I can call him tomorrow and he will come out with his "manager" and work on it. Although I'm pretty sure he's just trying to find a way to get out of there by 5pm. I let him leave and let the Tivo try to finish downloading the channel list.</p>
+
+<p>After leaving it for hours, I realize it's not working and unplug everything. I go to bed knowing I'm going to call Charter the next day and either get it completed or cancel my service.</p>
+
+<p>The next day when I call Charter, I complained about what happened and very quickly got put on the VIP 'ticket system'. I didn't know that existed but I had someone calling me to make an appointment while I was STILL ON the phone with customer service. Why can't ALL service be VIP?! Nonetheless I made an appointment for them to come out on Friday. Since it's Thursday and they won't be out till the next day, I make a point to try to figure out the issue when I get home that night.</p>
+
+<p>Getting home, I start the debug session. After about an hour I had it figured out and working. I didn't know which I was more, upset that this was something they were unable to figure out, or happy that I was able to fix it and finally have cable. Either way here is what they did wrong and I had to fix for them:</p>
+
+<ul>
+  <li>Cable was put in the ANT IN of the Tivo (and not the CABLE IN)</li>
+  <li>I added a cable splitter to the cable coming from the wall</li>
+  <li>Ran one of the cable to the CABLE IN of the Tivo</li>
+  <li>The other cable ran to the CABLE IN of the Digital Tuner</li>
+  <li>Plugged the Digital Tuner USB into the Tivo</li>
+  <li>Unplugged the cable the installer had run from the CABLE OUT of the Tuner to the CABLE IN of the Tivo (in my case he had done it to the ANT IN)</li>
+</ul>
+
+<p>It seems when using a digital tuner that a cable splitter is needed. Even though the tuner had a cable IN and OUT, Chater states to not use it and instead use a cable splitter. Seems one cable should go to the Tivo (or which ever set top box is being used) and the other to the digital tuner. The tuner uses that cable to communicate to Charter what channel is requested and should be sent at which point the Tivo "sees" it with the cable plugged into it.</p>
+
+<p>In addition to the above being done by myself. I was also on the phone with support and found out that the cable cards were set up in the system by the installer with the information switched. Meaning card A has the serial for card B and vice versa. Thus they were unable to properly decrypt anything. Once the awesome woman on the other end was able to switch those. Bingo! Working cable...finally!</p>
+
+<p>I was tempted to put everything back the way it was and have them try to figure it out themselves when they were suppose to come out on Friday. However I decided my time was more important and simply cancelled the appointment.</p>
+
+<p>Hope your cable installation is much easier than mine!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Doing the Hard Way, 15 Miles at a Time]]></title>
     <link href="http://www.kevinlinder.com/articles/2013/01/05/doing-the-hard-way-15-miles-at-a-time/"/>
     <updated>2013-01-05T16:03:19+00:00</updated>
     <id>http://www.kevinlinder.com/articles/2013/01/05/doing-the-hard-way-15-miles-at-a-time</id>
@@ -42,7 +96,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Riding the roller coaster again]]></title>
+    <title type="html"><![CDATA[Riding the Roller Coaster Again]]></title>
     <link href="http://www.kevinlinder.com/articles/2012/12/02/riding-the-roller-coaster-again/"/>
     <updated>2012-12-02T07:48:55+00:00</updated>
     <id>http://www.kevinlinder.com/articles/2012/12/02/riding-the-roller-coaster-again</id>
@@ -70,7 +124,7 @@ Everyone should be living in a way that when they are at the end of their ride, 
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Taking steps forward to your dream]]></title>
+    <title type="html"><![CDATA[Taking Steps Forward to Your Dream]]></title>
     <link href="http://www.kevinlinder.com/articles/2012/10/22/taking-steps-forward-to-your-dream/"/>
     <updated>2012-10-22T21:45:30+00:00</updated>
     <id>http://www.kevinlinder.com/articles/2012/10/22/taking-steps-forward-to-your-dream</id>
@@ -81,7 +135,7 @@ Everyone should be living in a way that when they are at the end of their ride, 
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Hating white people]]></title>
+    <title type="html"><![CDATA[Hating White People]]></title>
     <link href="http://www.kevinlinder.com/articles/2012/10/14/hating-white-people/"/>
     <updated>2012-10-14T04:17:00+00:00</updated>
     <id>http://www.kevinlinder.com/articles/2012/10/14/hating-white-people</id>
